@@ -1,0 +1,28 @@
+#Monty hall problem
+import random 
+
+doors = [0,0,1]
+count=0
+play = int(input("Number of executions: "))
+q = input("Are you change the choice?(y/n): ")
+if q == 'y' :
+    for i in range(1,play+1):
+        choice = random.choice(doors)
+        if choice == 0:
+            print('car')
+            count+=1
+        else: 
+            print('goat')
+elif q == 'n' :
+     for i in range(1,play+1):
+        choice = random.choice(doors)
+        if choice == 0:
+            print('goat')
+            
+        else: 
+            print('car')
+            count+=1
+else : 
+    print('wrong answer')
+
+print(str(count/play*100)+'%')
